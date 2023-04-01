@@ -1,7 +1,5 @@
 {%extends 'main/base.html'%}
-
 {%block content%}
-{{data}}
 <section class="vh-100">
   <div class="container py-5 h-100">
 
@@ -9,9 +7,10 @@
       <div class="col-md-8 col-lg-6 col-xl-4">
 
         <h3 class="mb-4 pb-2 fw-normal">Check the weather forecast</h3>
-      <form action="{{url_for('search')}}" method="POST">
+      <form action="/search" method="GET">
+
         <div class="input-group rounded mb-3">
-          <input type="text" name="name">
+          {{data}}
          <span class="input-group-text border-0 fw-bold" id="search-addon"> <input type="submit" value="Search">
             </span>
 
@@ -40,4 +39,5 @@
 
   </div>
 </section>
+
 {%endblock%}
